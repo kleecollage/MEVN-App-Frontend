@@ -9,6 +9,7 @@ const routes = [
         meta: { auth: true },
       },
       { path: "login", component: () => import("pages/LoginPage.vue") },
+      { path: "register", component: () => import("pages/RegisterPage.vue") },
       {
         path: "protected",
         component: () => import("pages/ProtectedPage.vue"),

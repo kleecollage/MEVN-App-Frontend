@@ -6,18 +6,50 @@ export const useUserStore = defineStore("user", () => {
   const token = ref(null);
   const expiresIn = ref(null);
 
-  const access = async () => {
+  const access = async(email, password) => {
     try {
       const res = await api.post("/auth/login", {
-        email: "jane.smith@mail.com",
-        password: "123456",
+        email: email,
+        password: password,
       });
       token.value = res.data.token;
       expiresIn.value = res.data.expiresIn;
       sessionStorage.setItem('user', true)
       setTime();
     } catch (error) {
-      console.log(error);
+      if (error.response) {
+        // console.log(error.response.data)
+        throw (error.response.data)
+      } else if (error.request) {
+        console.log(error.request)
+      } else {
+        console.log('Error', error.message);
+      }
+      console.log(error.config)
+    }
+  };
+
+  const register = async(email, password, repassword) => {
+    try {
+      const res = await api.post("/auth/register", {
+        email: email,
+        password: password,
+        repassword: repassword,
+      });
+      token.value = res.data.token;
+      expiresIn.value = res.data.expiresIn;
+      sessionStorage.setItem('user', true)
+      setTime();
+    } catch (error) {
+      if (error.response) {
+        // console.log(error.response.data)
+        throw (error.response.data)
+      } else if (error.request) {
+        console.log(error.request)
+      } else {
+        console.log('Error', error.message);
+      }
+      console.log(error.config)
     }
   };
 
@@ -61,6 +93,7 @@ export const useUserStore = defineStore("user", () => {
     token,
     expiresIn,
     access,
+    register,
     setTime,
     refreshToken,
     logout,

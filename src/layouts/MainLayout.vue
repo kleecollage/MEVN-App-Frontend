@@ -8,8 +8,9 @@
           Quasar App
         </q-toolbar-title>
 
-        <q-btn color="purple" to="/">Home</q-btn>
-        <q-btn color="green" @click="accessUser" v-if="!userStore.token">Login</q-btn>
+        <q-btn color="purple" to="/" v-if="userStore.token">Home</q-btn>
+        <q-btn class="q-mr-sm" color="green" to="/login" v-if="!userStore.token">Login</q-btn>
+        <q-btn color="cyan" to="/register" v-if="!userStore.token">Register</q-btn>
         <q-btn color="red" @click="logout" v-if="userStore.token">Logout</q-btn>
         <q-btn color="orange" to="/protected" v-if="userStore.token">Protected</q-btn>
       </q-toolbar>
