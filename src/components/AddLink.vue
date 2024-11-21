@@ -7,12 +7,11 @@
       :rules="[(val) => (val && val.trim() !== '') || 'Write something you asshole']"
     />
     <q-btn
-      class="q-mt-sm full-width"
+      class="q-my-sm full-width"
       label="Add"
-      color="primary"
+      color="secondary"
       type="submmit"
       :loading=loading
-    />
     />
   </q-form>
 </template>
@@ -24,24 +23,24 @@ import { useNotify } from 'src/composables/notifyHook';
 //** CONSTANTS **//
 const useLink = useLinkStore();
 const link = ref('')
-const { showNotify } = useNotify();
+const { errorNotify, successNotify } = useNotify();
 const loading = ref(false);
 //** METHODS **//
 const addLink = async () => {
   try {
     loading.value = true;
     await useLink.createLink(link.value);
-    showNotify('Link added successfully', 'green')
+    successNotify('Link added successfully')
   } catch (error) {
     if (error.errors) {
       return error.errors.forEach(error => {
-        showNotify(error.msg);
+        errorNotify(error.msg);
       });
     }
-    showNotify(error);
+    errorNotify(error);
   } finally {
     loading.value = false;
-    link.value = '';
+    link.value = 'www.';
   }
 };
 

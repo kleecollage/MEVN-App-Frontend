@@ -1,9 +1,9 @@
 <template>
   <q-page padding>
     <AddLink />
-    <pre> {{ useLink.links }} </pre>
+    <!-- <pre> {{ useLink.links }} </pre> -->
     <template v-for="link in useLink.links" :key="link._id">
-      <LinkCard />
+      <LinkCard :link="link"/>
     </template>
   </q-page>
 </template>
