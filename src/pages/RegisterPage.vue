@@ -1,34 +1,34 @@
 <template>
   <q-page padding class="row justify-center">
     <div class="col-12 col-sm-6 col-md-5">
-      <h3>Registro</h3>
+      <h3>Registry</h3>
       <q-form @submit.prevent="handleSubmit">
         <q-input 
           v-model="email"
           type="email"
-          label="Ingrese su email"
+          label="Enter your email"
           :rules="[
-            val => val && regex.test(email) || 'Formato de email incorrecto'
+            val => val && regex.test(email) || 'Incorrect email format'
           ]"
         />
         <q-input 
           v-model="password" 
           type="password"
-          label="Ingrese su contraseña"
+          label="Create your password"
           :rules="[
-            val => val && val.length > 5 || '¿Llamas a esto una contraseña?'
+            val => val && val.length > 5 || 'Password must have at least 6 characters'
           ]"
         />
         <q-input 
           v-model="repassword" 
           type="password"
-          label="Ingrese nuevamente su contraseña"
+          label="Enter the same password"
           :rules="[
-            val => val && val == password || 'No coinciden las contraseñas'
+            val => val && val == password || 'Passwords do not match'
           ]"
         />
         <div>
-          <q-btn label="registrarse" type="submit"/>
+          <q-btn label="Register" type="submit"/>
         </div>
       </q-form>
     </div>

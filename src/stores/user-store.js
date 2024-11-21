@@ -90,12 +90,14 @@ export const useUserStore = defineStore("user", () => {
   };
 
   return {
+    // PROPERTIES
     token,
     expiresIn,
+    // METHODS
     access,
-    register,
-    setTime,
-    refreshToken,
     logout,
+    register,
+    refreshToken,
+    setTime,
   };
 });

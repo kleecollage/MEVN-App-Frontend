@@ -1,26 +1,26 @@
 <template>
   <q-page padding class="row justify-center">
     <div class="col-12 col-sm-6 col-md-5">
-      <h3>Iniciar Sesion</h3>
+      <h3>Login</h3>
       <q-form @submit.prevent="handleSubmit">
         <q-input 
           v-model="email"
           type="email"
-          label="Ingrese su email"
+          label="Enter your email"
           :rules="[
-            val => val && regex.test(email) || 'Formato de email incorrecto'
+            val => val && regex.test(email) || 'Incorrect email format'
           ]"
         />
         <q-input 
           v-model="password" 
           type="password"
-          label="Ingrese su contraseña"
+          label="Enter your password"
           :rules="[
-            val => val && val.length > 5 || '¿Llamas a esto una contraseña?'
+            val => val && val.length > 5 || 'Do you call this a password?'
           ]"
         />
         <div>
-          <q-btn label="Acceder" type="submit"/>
+          <q-btn label="Access" type="submit"/>
         </div>
       </q-form>
     </div>
