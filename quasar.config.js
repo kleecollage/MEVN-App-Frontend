@@ -54,8 +54,8 @@ module.exports = configure(function ( ctx ) {
       // publicPath: '/',
       // analyze: true,
       env: {
-        FRONT_URI: ctx.dev ? 'http://localhost:9000' : '',
-        MY_API_REST: ctx.dev? 'http://localhost:5000/api/v1' : ''
+        FRONT_URI: ctx.dev ? 'http://localhost:9000' : 'https://mevn-app-kleec.netlify.app2',
+        MY_API_REST: ctx.dev? 'http://localhost:5000/api/v1' : 'https://mevn-app-backend.onrender.com'
       },
       // rawDefine: {}
       // ignorePublicFolder: true,
