@@ -7,7 +7,7 @@ export const useNotify = () => {
     $q.notify({
       message,
       color: 'green',
-      icon: 'report_problem'
+      icon: 'mdi-check-circle-outline'
     })
   }
 
