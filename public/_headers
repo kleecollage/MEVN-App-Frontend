@@ -1,5 +1,4 @@
-/*\n
-Access-Control-Allow-Origin: *\n
-Access-Control-Allow-Headers: Content-Type\n
-Access-Control-Allow-Methods: GET, POST, OPTIONS\n
-```[_{{{CITATION{{{_2{Netlify Function blocked by CORS policy](https://answers.netlify.com/t/netlify-function-blocked-by-cors-policy/85438)
+/*
+  Access-Control-Allow-Origin: *
+  Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE
+  Access-Control-Allow-Headers: Content-Type, Authorization
