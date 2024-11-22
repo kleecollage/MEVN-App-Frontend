@@ -3,7 +3,7 @@
     <div class="col-12 col-sm-6 col-md-5">
       <h3>Login</h3>
       <q-form @submit.prevent="handleSubmit">
-        <q-input 
+        <q-input
           v-model="email"
           type="email"
           label="Enter your email"
@@ -11,8 +11,8 @@
             val => val && regex.test(email) || 'Incorrect email format'
           ]"
         />
-        <q-input 
-          v-model="password" 
+        <q-input
+          v-model="password"
           type="password"
           label="Enter your password"
           :rules="[
@@ -60,8 +60,4 @@ const alertDialog = (message = "Error en el servidor") => {
       message
     });
 };
-
-
 </script>
-
-<style lang="scss" scoped></style>

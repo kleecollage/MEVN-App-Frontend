@@ -15,6 +15,7 @@ export const useLinkStore = defineStore('link', () => {
     try {
       const res = await api({
         method: 'POST',
+        withCredentials: true,
         url: '/links',
         headers: {
           Authorization: 'Bearer ' + userStore.token

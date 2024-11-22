@@ -6,6 +6,7 @@ export const useUserStore = defineStore("user", () => {
   const token = ref(null);
   const expiresIn = ref(null);
 
+  //** LOGIN **//
   const access = async(email, password) => {
     try {
       const res = await api.post("/auth/login", {
